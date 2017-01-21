@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        String name = "resource" + rng.nextInt(954);
+        String name = "_" + (1000 + rng.nextInt(954));
         int resource = getResources().getIdentifier(name, "drawable", "com.package");
 
         iconView = (ImageView) findViewById(R.id.iconview);
