@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView iconView;
     private Random rng = new Random();
+    private int pictureRID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +25,24 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        String name = "_" + (1000 + rng.nextInt(954));
-        int resource = getResources().getIdentifier(name, "drawable", "com.package");
+        pictureRID = rng.nextInt(954) + 2130837504;
 
         iconView = (ImageView) findViewById(R.id.iconview);
-        iconView.setImageResource(R.drawable._1001);
+        iconView.setImageResource(pictureRID);
+
+
+        System.out.println("Below:");
+        System.out.println(R.drawable._1000);
+        System.out.println(R.drawable._1001);
+        System.out.println(R.drawable._1002);
+        System.out.println(R.drawable._1003);
+        System.out.println(R.drawable._1013);
+        System.out.println(R.drawable._1103);
+
+        //1000 - 1954
+        //0 - 954
+
+        //2130837504 - 2130838458
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -37,7 +51,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 //        .setAction("Action", null).show();
-                iconView.setImageResource(R.drawable._1002);
+                pictureRID = rng.nextInt(954) + 2130837504;
+                iconView.setImageResource(pictureRID);
             }
         });
     }
