@@ -10,9 +10,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import java.util.Random;
+
 public class MainActivity extends AppCompatActivity {
 
     private ImageView iconView;
+    private Random rng = new Random();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        String name = "resource" + rng.nextInt(954);
+        int resource = getResources().getIdentifier(name, "drawable", "com.package");
 
         iconView = (ImageView) findViewById(R.id.iconview);
         iconView.setImageResource(R.drawable._1001);
