@@ -10,6 +10,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
+import java.util.HashMap;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageView iconView;
     private Random rng = new Random();
     private int pictureRID;
+    private HashMap<String, String> answerMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,20 +32,13 @@ public class MainActivity extends AppCompatActivity {
         iconView = (ImageView) findViewById(R.id.iconview);
         iconView.setImageResource(pictureRID);
 
+        answerMap = new HashMap<String, String>();
 
-        System.out.println("Below:");
-        System.out.println(R.drawable._1000);
-        System.out.println(R.drawable._1001);
-        System.out.println(R.drawable._1002);
-        System.out.println(R.drawable._1003);
-        System.out.println(R.drawable._1013);
-        System.out.println(R.drawable._1103);
+
 
         //1000 - 1954
         //0 - 954
-
         //2130837504 - 2130838458
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

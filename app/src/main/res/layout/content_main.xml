@@ -13,12 +13,43 @@
     tools:context="dsova.symbolspot.MainActivity"
     tools:showIn="@layout/activity_main">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@mipmap/ic_launcher"
-        android:id="@+id/iconview"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true"
-        android:scaleType="center" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true">
+
+        <ImageView
+            app:srcCompat="@drawable/_1001"
+            android:id="@+id/imageView4"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:elevation="20dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:layout_marginTop="41dp"
+            android:id="@+id/guesseditText"
+            android:hint="Guess Me!"
+            android:textAlignment="center"
+            android:layout_below="@+id/imageView4"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:text="Check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkbutton"
+            android:layout_alignBottom="@+id/guesseditText"
+            android:layout_toRightOf="@+id/imageView4"
+            android:layout_toEndOf="@+id/imageView4"
+            android:textAllCaps="false" />
+    </RelativeLayout>
 </RelativeLayout>
