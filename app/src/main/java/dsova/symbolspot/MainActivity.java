@@ -34,18 +34,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+    setSupportActionBar(toolbar);
 
+        //Setup activity objects
         iconView = (ImageView) findViewById(R.id.iconview);
         iconView.setImageResource(pictureRID);
         guessText = (EditText) findViewById(R.id.guesseditText);
 
-        pictureRID = rng.nextInt(954) + 2130837504;
-        iconView.setImageResource(pictureRID);
-        answersNumber = pictureRID - 2130837504;
-        currentAnswerForPic = answers[answersNumber];
-
-
+        generateNewIcon();
 
         //Notes:
         //answers[0] = _1000.png
@@ -62,12 +58,8 @@ public class MainActivity extends AppCompatActivity {
                 //Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 //        .setAction("Action", null).show();
 
-                if(currentAnswerForPic.equalsIgnoreCase(guessText.getText().toString())) { //Change
-                    pictureRID = rng.nextInt(954) + 2130837504;
-                    iconView.setImageResource(pictureRID);
-                    answersNumber = pictureRID - 2130837504;
-                    currentAnswerForPic = answers[answersNumber];
-                }
+                if(currentAnswerForPic.equalsIgnoreCase(guessText.getText().toString()))
+                   generateNewIcon();
             }
         });
     }
@@ -92,5 +84,21 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void generateNewIcon()
+    {
+        pictureRID = rng.nextInt(954) + 2130837504;
+        iconView.setImageResource(pictureRID);
+        answersNumber = pictureRID - 2130837504;
+        currentAnswerForPic = answers[answersNumber];
+    }
+
+    public void onSkipClick(View view) {
+
+    }
+
+    public void onCheckClick(View view) {
+
     }
 }
