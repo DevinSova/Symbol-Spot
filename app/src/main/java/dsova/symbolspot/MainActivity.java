@@ -1,5 +1,6 @@
 package dsova.symbolspot;
 
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -22,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageView iconView;
     private EditText guessText;
+    private ImageView lasticonView;
+    private TextView lasticonName;
 
     private Random rng = new Random();
     private int pictureRID;
@@ -40,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         iconView = (ImageView) findViewById(R.id.iconview);
         iconView.setImageResource(pictureRID);
         guessText = (EditText) findViewById(R.id.guesseditText);
+        lasticonView = (ImageView) findViewById(R.id.lasticonview);
+        lasticonName = (TextView) findViewById(R.id.lasticonname);
 
         generateNewIcon();
 
@@ -88,6 +94,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void generateNewIcon()
     {
+        //Update last icon view
+        lasticonName.setText(currentAnswerForPic);
+        lasticonView.setImageResource(pictureRID);
+
+        //Generate and show new icon view
         pictureRID = rng.nextInt(954) + 2130837504;
         iconView.setImageResource(pictureRID);
         answersNumber = pictureRID - 2130837504;
