@@ -27,10 +27,12 @@ public class MainActivity extends AppCompatActivity {
     private EditText guessText;
     private ImageView lasticonView;
     private TextView lasticonName;
+    private TextView streakText;
     private Button hintButton;
     private Button checkButton;
     private Button skipButton;
 
+    private int streak;
     private Random rng = new Random();
     private int pictureRID;
     private int answersNumber;
@@ -50,9 +52,11 @@ public class MainActivity extends AppCompatActivity {
         guessText = (EditText) findViewById(R.id.guesseditText);
         lasticonView = (ImageView) findViewById(R.id.lasticonview);
         lasticonName = (TextView) findViewById(R.id.lasticonname);
+        streakText = (TextView) findViewById(R.id.streaktext);
         hintButton = (Button) findViewById(R.id.hintbutton);
         checkButton = (Button) findViewById(R.id.checkbutton);
         skipButton = (Button) findViewById(R.id.skipbutton);
+        streak = 0;
 
         generateNewIcon();
 
@@ -114,12 +118,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void onSkipClick(View view)  {
         generateNewIcon();
+        streak = 0;
+        streakText.setText("Streak: " + streak);
     }
 
     public void onCheckClick(View view) {
-        if(currentAnswerForPic.equalsIgnoreCase(guessText.getText().toString()) || (currentAnswerForPic.contains(guessText.getText().toString())) && guessText.getText().toString().length() > 5);
-        //TODO: Up the streak number!
+        if(currentAnswerForPic.equalsIgnoreCase(guessText.getText().toString()) || ((currentAnswerForPic.contains(guessText.getText().toString())) && guessText.getText().toString().length() >= 3)) {
             generateNewIcon();
+            streak++;
+            streakText.setText("Streak: " + streak);
+        }
     }
 
     public void onHintClick(View view){

@@ -51,7 +51,7 @@
             android:layout_toStartOf="@+id/iconview"
             android:textAllCaps="false"
             android:textSize="18sp"
-            android:onClick="onHintClick (MainActivity)" />
+            android:onClick="onHintClick" />
 
         <Button
             android:text="Skip"
@@ -63,7 +63,7 @@
             android:layout_toEndOf="@+id/iconview"
             android:textAllCaps="false"
             android:textSize="18sp"
-            android:onClick="onSkipClick (MainActivity)" />
+            android:onClick="onSkipClick" />
 
         <Button
             android:text="Check"
@@ -74,13 +74,13 @@
             android:layout_centerHorizontal="true"
             android:textSize="18sp"
             android:textAllCaps="false"
-            android:onClick="onCheckClick (MainActivity)" />
+            android:onClick="onCheckClick" />
 
         <TextView
             android:text="Streak: 0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/streakview"
+            android:id="@+id/streaktext"
             android:textSize="20sp"
             android:textAllCaps="false"
             android:layout_alignParentTop="true"
