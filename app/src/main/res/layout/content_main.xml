@@ -75,5 +75,16 @@
             android:textAllCaps="false"
             android:onClick="onCheckClick (MainActivity)" />
 
+        <TextView
+            android:text="Streak: 0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/streakview"
+            android:textSize="22sp"
+            android:textAllCaps="false" />
+
     </RelativeLayout>
 </RelativeLayout>

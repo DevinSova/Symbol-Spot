@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onCheckClick(View view) {
-        if(currentAnswerForPic.equalsIgnoreCase(guessText.getText().toString()))
+        if(currentAnswerForPic.equalsIgnoreCase(guessText.getText().toString()) || (currentAnswerForPic.contains(guessText.getText().toString())) && guessText.getText().toString().length() > 5);
             generateNewIcon();
     }
 
