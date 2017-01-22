@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Button;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText guessText;
     private ImageView lasticonView;
     private TextView lasticonName;
+    private Button hintButton;
+    private Button checkButton;
+    private Button skipButton;
 
     private Random rng = new Random();
     private int pictureRID;
@@ -46,6 +50,9 @@ public class MainActivity extends AppCompatActivity {
         guessText = (EditText) findViewById(R.id.guesseditText);
         lasticonView = (ImageView) findViewById(R.id.lasticonview);
         lasticonName = (TextView) findViewById(R.id.lasticonname);
+        hintButton = (Button) findViewById(R.id.hintbutton);
+        checkButton = (Button) findViewById(R.id.checkbutton);
+        skipButton = (Button) findViewById(R.id.skipbutton);
 
         generateNewIcon();
 
@@ -111,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void onCheckClick(View view) {
         if(currentAnswerForPic.equalsIgnoreCase(guessText.getText().toString()) || (currentAnswerForPic.contains(guessText.getText().toString())) && guessText.getText().toString().length() > 5);
+        //TODO: Up the streak number!
             generateNewIcon();
     }
 

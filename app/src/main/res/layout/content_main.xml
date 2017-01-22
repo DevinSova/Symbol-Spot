@@ -50,7 +50,8 @@
             android:layout_toLeftOf="@+id/iconview"
             android:layout_toStartOf="@+id/iconview"
             android:textAllCaps="false"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:onClick="onHintClick (MainActivity)" />
 
         <Button
             android:text="Skip"
