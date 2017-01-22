@@ -94,11 +94,16 @@ public class MainActivity extends AppCompatActivity {
         currentAnswerForPic = answers[answersNumber];
     }
 
-    public void onSkipClick(View view) {
-
+    public void onSkipClick(View view)  {
+        generateNewIcon();
     }
 
     public void onCheckClick(View view) {
+        if(currentAnswerForPic.equalsIgnoreCase(guessText.getText().toString()))
+            generateNewIcon();
+    }
 
+    public void onHintClick(View view){
+        //TODO: Implement
     }
 }

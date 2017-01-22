@@ -41,5 +41,39 @@
             android:layout_below="@+id/iconview"
             android:layout_centerHorizontal="true" />
 
+        <Button
+            android:text="Hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/hintbutton"
+            android:layout_below="@+id/guesseditText"
+            android:layout_toLeftOf="@+id/iconview"
+            android:layout_toStartOf="@+id/iconview"
+            android:textAllCaps="false"
+            android:textSize="18sp" />
+
+        <Button
+            android:text="Skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/skipbutton"
+            android:layout_below="@+id/guesseditText"
+            android:layout_toRightOf="@+id/iconview"
+            android:layout_toEndOf="@+id/iconview"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:onClick="onSkipClick (MainActivity)" />
+
+        <Button
+            android:text="Check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/checkbutton"
+            android:layout_below="@+id/guesseditText"
+            android:layout_centerHorizontal="true"
+            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:onClick="onCheckClick (MainActivity)" />
+
     </RelativeLayout>
 </RelativeLayout>
